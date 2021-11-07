@@ -6,8 +6,12 @@ from bs4 import BeautifulSoup
 window = tk.Tk()
 window.title('自動對發票')
 window.geometry('1000x500')
-lbl_1 = tk.Button(window, text='點我對發票', bg='white', fg='black', font=('Arial', 12) )
-lbl_1.grid(column=1 , row=1 )
+lb_1 = tk.Label(window, text='歡迎使用對發票程式', font=('Arial', 24))
+lb_1.grid(column=10,row=1)
+Ey_ac = tk.Entry(window, font=('Arial', 12))
+Ey_ac.grid(column=4,row=2)
+but_1 = tk.Button(window, text='點我對發票', bg='white', fg='black', font=('Arial', 12) )
+but_1.grid(column=1 , row=3 )
 #Gui Setting
 
 r = requests.get('https://invoices.com.tw/0708.html')
@@ -53,7 +57,6 @@ Lucky_num6 = soup.find("td" , class_="number3").getText('number3')
 ########################################
 
 
-print(Lucky_num6)
 
 
 window.mainloop()
